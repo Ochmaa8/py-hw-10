@@ -1,5 +1,7 @@
+# Создаем пустой словарь
 pets = {}
 
+# Запрашиваем информацию у пользователя
 name = input("Введите имя питомца: ")
 animal_type = input("Введите вид питомца: ")
 age = int(input("Введите возраст питомца: "))
@@ -21,12 +23,13 @@ def get_age_string(age):
     else:
         return f"{age} лет"
 
-# Получаем информацию о питомце
+# Получаем информацию о питомце ИСПОЛЬЗУЯ keys() И values()
 for pet_name, pet_info in pets.items():
-    # Используем методы keys() и values() для получения данных
-    keys_list = list(pet_info.keys())
-    values_list = list(pet_info.values())
+    # Получаем ключи и значения
+    keys_list = list(pet_info.keys())    # ['Вид питомца', 'Возраст питомца', 'Имя владельца']
+    values_list = list(pet_info.values()) # [animal_type, age, owner]
     
+    # Извлекаем данные по индексам
     animal_type = values_list[0]
     age_value = values_list[1]
     owner_name = values_list[2]
